@@ -1,9 +1,13 @@
 // import React from 'react'
 // import { Route } from 'react-router-dom'
+import App from './App'
 import Home from './containers/Home'
 import Login from './containers/Login'
 
-export default [
+export default [{
+  path: '/',
+  component: App,
+  routes: [
   {
     path: '/',
     component: Home,
@@ -18,6 +22,11 @@ export default [
     key: 'login'
   }
 ]
+}]
+
+
+
+
 
 // (
 //   <div>
