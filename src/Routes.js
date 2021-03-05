@@ -8,6 +8,7 @@ import NotFound from './containers/NotFound'
 export default [{
   path: '/',
   component: App,
+  loadData: App.loadData,
   routes: [
   {
     path: '/',

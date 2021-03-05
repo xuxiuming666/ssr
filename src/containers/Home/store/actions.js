@@ -6,9 +6,7 @@ const changeList = (list) => ({
 })
 export const getHomeList = () => {
   return (dispatch) => {
-    // http://localhost:3000/note
     return axios.get('http://localhost:3000/note').then(res => {
-      console.log(res)
       const list = res.data
       dispatch(changeList(list))
     }) //加上return使得返回结果变成promise

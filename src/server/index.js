@@ -10,7 +10,6 @@ app.get('*', (req, res) => {
   const store = getStore()
   //得到异步数据填充到store里。异步数据要结合请求地址和路由做判断。
   const matchedRoutes =  matchRoutes(routes, req.path)
-  console.log(matchedRoutes)
   // 让matchRoutes里面所有组件对应的loadData都执行一次
   const promises = []
   matchedRoutes.forEach(item => {

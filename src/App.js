@@ -1,12 +1,16 @@
 import React from 'react'
-import Header from '../src/components/Header'
+import Header from '../src/components/Header/index.js'
 import { renderRoutes } from 'react-router-config'
+import { actions } from './components/Header/store/index'
 // import routes from '../src/Routes'
 const App = (props) => {
-  console.log(props)
   return <div>
     <Header />
     {renderRoutes(props.route.routes)}
   </div>
+}
+
+App.loadData = (store) => {
+  store.dispatch(actions.getHeaderInfo())
 }
 export default App
