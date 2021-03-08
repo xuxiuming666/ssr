@@ -22,6 +22,7 @@ class Translation extends Component {
     }
   }
 }
+// Redirect仅限于客户端重定向
 
 Translation.loadData = (store) => {
   // 负责在服务器端渲染之前，把这个路由需要的数据提前加载好

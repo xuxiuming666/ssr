@@ -21,7 +21,10 @@ app.get('*', (req, res) => {
   Promise.all(promises).then(() => {
     const context = {}
     const html = render(store, routes, req, context)
-    if (context.NotFound) {
+
+    if(context.action === 'REPLACE') {
+      res.redirect(301, context.url) // server 301 redirect, 依赖StaticRouter实现
+    } else if (context.NotFound) {
       res.status(404)
       res.send(html)
     } else {
