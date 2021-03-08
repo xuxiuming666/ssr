@@ -2,7 +2,7 @@
 // import { Route } from 'react-router-dom'
 import App from './App'
 import Home from './containers/Home'
-import Login from './containers/Login'
+import Translation from './containers/Translation'
 import NotFound from './containers/NotFound'
 
 export default [{
@@ -18,10 +18,11 @@ export default [{
     key: 'home'
   },
   {
-    path: '/login',
-    component: Login,
+    path: '/translation',
+    component: Translation,
     exact: true,
-    key: 'login'
+    loadData: Translation.loadData,
+    key: 'translation'
   },
   {
     component: NotFound

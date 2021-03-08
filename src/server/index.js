@@ -17,6 +17,7 @@ app.get('*', (req, res) => {
       promises.push(item.route.loadData(store))
     }
   })
+
   Promise.all(promises).then(() => {
     const context = {}
     const html = render(store, routes, req, context)

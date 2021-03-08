@@ -1,14 +1,13 @@
-import { CHANGE_LIST } from './contants'
+import { TRANSLATE_LIST  } from './contants'
 const defaultState = {
-  // name: 'xu',
-  newsList: []
+  translateList: []
 }
 export default (state = defaultState, action) => {
   switch(action.type) {
-    case CHANGE_LIST:
+    case TRANSLATE_LIST:
       return {
         ...state,
-        newsList: action.list
+        translateList: action.list
       }
     default:
       return state

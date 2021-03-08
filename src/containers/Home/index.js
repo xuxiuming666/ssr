@@ -12,7 +12,7 @@ class Home extends Component {
 
   render () {
     return <div>
-    <div>this is {this.props.name}</div>
+    {/* <div>this is {this.props.name}</div> */}
     {
       this.props.list.map(item => {
         return <div>{item.title}</div>
