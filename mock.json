@@ -27,7 +27,7 @@
     }
   ],
   "login": {
-    "login": false
+    "login": true
   },
   "translation": [
     {

@@ -5,7 +5,7 @@ import { actions } from './components/Header/store/index'
 // import routes from '../src/Routes'
 const App = (props) => {
   return <div>
-    <Header />
+    <Header staticContext={props.staticContext} />
     {renderRoutes(props.route.routes)}
   </div>
 }

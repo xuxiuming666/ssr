@@ -1,6 +1,6 @@
 module.exports = {
   module: {
-    rules: [{ // 配置规则 
+    rules: [{ // 配置规则
       test: /\.js?$/,
       loader: 'babel-loader',
       exclude: /node-modules/,

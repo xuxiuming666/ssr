@@ -2,15 +2,22 @@ import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getHeaderInfo, login, logout } from './store/actions'
-
+import style from './style.css'
 class Header extends Component {
 
   componentDidMount () {
     this.props.getHeaderInfo()
   }
+
+  componentWillMount () {
+    if (this.props.staticContext) {
+      this.props.staticContext.css.push(style._getCss())
+    }
+  }
+
   render () {
     const { handleLogin, login, handleLogout } = this.props
-    return <div>
+    return <div className={style.test}>
       <Link to='/'>Home</Link>
       <br />
       {

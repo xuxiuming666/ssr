@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getHomeList } from './store/actions'
+import style from './style.css'
 
 class Home extends Component {
 
@@ -10,9 +11,14 @@ class Home extends Component {
     }
   }
 
+  componentWillMount () {
+    if (this.props.staticContext) {
+      this.props.staticContext.css.push(style._getCss())
+    }
+  }
+
   render () {
-    return <div>
-    {/* <div>this is {this.props.name}</div> */}
+    return <div className={style.test}>
     {
       this.props.list.map(item => {
         return <div>{item.title}</div>

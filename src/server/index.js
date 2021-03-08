@@ -14,14 +14,16 @@ app.get('*', (req, res) => {
   const promises = []
   matchedRoutes.forEach(item => {
     if (item.route.loadData) {
-      promises.push(item.route.loadData(store))
+      const promise = new Promise((resolve, reject) => {
+        item.route.loadData(store).then(resolve).catch(resolve)
+      })
+      promises.push(promise)
     }
   })
 
   Promise.all(promises).then(() => {
-    const context = {}
+    const context = { css: [] }
     const html = render(store, routes, req, context)
-
     if(context.action === 'REPLACE') {
       res.redirect(301, context.url) // server 301 redirect, 依赖StaticRouter实现
     } else if (context.NotFound) {

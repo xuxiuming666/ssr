@@ -16,10 +16,13 @@ export const render = (store, routes, req, context) => {
           </div>
         </StaticRouter>
       </Provider>) //location获取路径
+
+      const cssStr = context.css.length ? context.css.join('\n') : ''
       return `
       <html>
         <head>
           <title>hello</title>
+          <style>${cssStr}</style>
         </head>
         <body>
           <div id='root'>${content}</div>
